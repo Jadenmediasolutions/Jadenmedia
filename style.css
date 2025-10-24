@@ -1,0 +1,68 @@
+/* Reset-ish */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #0f1720; /* dark background behind the banner */
+  color: #fff;
+}
+
+/* Hero container centers the banner and gives a little spacing */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 70vh; /* keep it tall on larger screens */
+}
+
+/* Make the banner responsive.
+   It will scale down on small screens and stay sharp on large screens. */
+.banner {
+  width: 100%;
+  max-width: 1200px;  /* prevents it from growing too wide on huge screens */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  display: block;
+}
+
+/* Optional overlay with website link (positioned bottom-center of the image) */
+.overlay {
+  position: relative;
+  margin-top: -5rem; /* pull overlay up onto the banner (tweak if needed) */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  pointer-events: none; /* avoids blocking clicks on the image below */
+}
+
+.site-link {
+  pointer-events: auto;
+  background: rgba(0, 150, 220, 0.95);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Footer note with handle */
+.footer-note {
+  background: #0594d6;
+  text-align: center;
+  padding: 0.9rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+/* Small screens tweaks */
+@media (max-width: 520px) {
+  .hero { padding: 1rem; min-height: auto; }
+  .overlay { margin-top: -3.5rem; }
+  .site-link { padding: 0.45rem 0.8rem; font-size: 0.95rem; }
+}
